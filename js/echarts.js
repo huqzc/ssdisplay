@@ -502,7 +502,11 @@ $(function () {
         var tag = []
         for (let item of data) {
             tag.push(item['name'])
-            item.itemStyle.normal.color = color[data.indexOf(item)]
+            item.itemStyle = {
+                normal: {
+                    color: color[data.indexOf(item)]
+                }
+            }
         }
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('echarts_5'));
