@@ -64,30 +64,34 @@ $(function () {
                 top: 'bottom',
                 text: ['高','低'],
                 inRange: {
-                    // color: ['#7db9b9', '#22e5e8', '#376d94', '#4660c3'] // 蓝绿
-                    color: ['#44AFF0', '#E1F71F', '#FF5302'] // 蓝绿
+                    color: ['#E1F71F', '#af89d6', '#ad46f3',  '#f845f1'] // 蓝绿
                 },
                 show:true
             },
             geo: {
-                show: true,
-                map: mapName,
+                map: 'china',
+                // 是否可拖动，缩放
+                roam: true,
+                zoom:1.23,
                 label: {
                     normal: {
-                        show: false
-                    },
-                    emphasis: {
-                        show: false
+                        show: true,
+                        fontSize:'10',
+                        color: 'rgba(0,0,0,0.7)'
                     }
                 },
-                roam: true,
                 itemStyle: {
-                    normal: {
-                        areaColor: '#44AFF0',
-                        borderColor: '#3b3838'
+                    normal:{
+                        borderColor: 'rgba(0, 0, 0, 0.2)',
+                        areaColor: '#44aff0'
                     },
-                    emphasis: {
-                        areaColor: '#2B91B7'
+                    emphasis:{
+                        areaColor: '#f845f1',
+                        shadowOffsetX: 0,
+                        shadowOffsetY: 0,
+                        shadowBlur: 20,
+                        borderWidth: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
                     }
                 }
             },
@@ -96,7 +100,7 @@ $(function () {
                     name: '数据量',
                     type: 'map',
                     geoIndex: 0,
-                    data: data_
+                    data: data
                 }
             ]
         }
