@@ -20,7 +20,13 @@ html,body{
     box-sizing: border-box;
     border-right: 5px solid #0089ff;
     border-left: 5px solid #0089ff;
-    background: url("../img/title.png") no-repeat;
+    /*background: url("../img/title.png") no-repeat;*/
+}
+.data>.data-title>.title-center>h2{
+    font-size: 34px;
+    text-align: center;
+    color: #1FD3EA;
+    font-weight: bold;
 }
 .data>.data-title>.title-left,
 .data>.data-title>.title-right{
