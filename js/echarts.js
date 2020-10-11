@@ -13,7 +13,6 @@ $(function () {
     data_callback('ua', echarts_4);
     data_callback('version', echarts_5);
     data_callback('path', echarts_6);
-    data_num(num)
 
 
     function map(data) {
@@ -48,6 +47,8 @@ $(function () {
                 value: value
             })
         });
+        // 展示数量
+        data_num(num)
 
         option = {
             tooltip: {
@@ -440,7 +441,6 @@ $(function () {
         xhr.send()
     }
     function data_num(data) {
-        console.log(data);
         var numDiv = document.getElementsByClassName('num')[0]
         var num_list = []
         var html = '';
