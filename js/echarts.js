@@ -610,7 +610,12 @@ $(function () {
             series: [{
                 name: '数据量',
                 type: 'bar',
-                data: value
+                data: value,
+                itemStyle: {
+                    normal: {
+                        color: '#44aff0'
+                    }
+                }
             }
             ]
         }
