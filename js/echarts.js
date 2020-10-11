@@ -100,7 +100,7 @@ $(function () {
                     name: '数据量',
                     type: 'map',
                     geoIndex: 0,
-                    data: data
+                    data: data_
                 }
             ]
         }
