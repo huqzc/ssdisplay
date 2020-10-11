@@ -444,12 +444,12 @@ $(function () {
         var numDiv = document.getElementsByClassName('num')[0]
         var num_list = []
         var html = '';
-        while (data > 0) {
+        for (let i = 0;data > 0; data = Math.floor(data/10), i++) {
+            if (i % 3 === 0 && i !== 0) num_list.push(',')
             num_list.push(data%10)
-            data = Math.floor(data/10)
         }
-        for (let i=num_list.length-1;i>-1;i++) {
-            if (i % 3 === 0) html += `<span>,</span>`
+        // num_list.reverse()
+        for (let i=num_list.length-1;i>=0;i--) {
             html += `<span>${num_list[i]}</span>`
         }
         numDiv.innerHTML = html;
