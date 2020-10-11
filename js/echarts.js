@@ -497,6 +497,7 @@ $(function () {
         });
     }
     function echarts_5(data) {
+        // 版本控制
         var tag = []
         for (let item of data) {
             tag.push(item['name'])
@@ -508,7 +509,7 @@ $(function () {
             backgroundColor: 'rgba(0,0,0,0)',
             tooltip: {
                 trigger: 'item',
-                formatter: "{b}  <br/>{c}辆"
+                formatter: "{b}  <br/>{c}"
             },
             legend: {
                 x: 'center',
@@ -538,7 +539,7 @@ $(function () {
                 label: {
                     normal: {
                         show: true,
-                        formatter: '{c}辆'
+                        formatter: '{c}'
                     },
                     emphasis: {
                         show: true
@@ -553,103 +554,7 @@ $(function () {
                         show: true
                     }
                 },
-                data: [{
-                    value: 600,
-                    name: '谷歌及其他浏览器',
-                    itemStyle: {
-                        normal: {
-                            color: '#f845f1'
-                        }
-                    }
-                },
-                    {
-                        value: 1100,
-                        name: '火狐浏览器',
-                        itemStyle: {
-                            normal: {
-                                color: '#ad46f3'
-                            }
-                        }
-                    },
-                    {
-                        value: 1200,
-                        name: 'Edge浏览器',
-                        itemStyle: {
-                            normal: {
-                                color: '#5045f6'
-                            }
-                        }
-                    },
-                    {
-                        value: 1300,
-                        name: 'QQ浏览器',
-                        itemStyle: {
-                            normal: {
-                                color: '#4777f5'
-                            }
-                        }
-                    },
-                    {
-                        value: 1400,
-                        name: 'UC浏览器',
-                        itemStyle: {
-                            normal: {
-                                color: '#44aff0'
-                            }
-                        }
-                    },
-
-                    {
-                        value: 0,
-                        name: "搜狗浏览器",
-                        label: {
-                            show: false
-                        },
-                        labelLine: {
-                            show: false
-                        }
-                    },
-                    {
-                        value: 0,
-                        name: "360浏览器",
-                        label: {
-                            show: false
-                        },
-                        labelLine: {
-                            show: false
-                        }
-                    },
-                    {
-                        value: 0,
-                        name: "百度浏览器",
-                        label: {
-                            show: false
-                        },
-                        labelLine: {
-                            show: false
-                        }
-                    },
-                    {
-                        value: 0,
-                        name: "",
-                        label: {
-                            show: false
-                        },
-                        labelLine: {
-                            show: false
-                        }
-                    },
-                    {
-                        value: 0,
-                        name: "",
-                        label: {
-                            show: false
-                        },
-                        labelLine: {
-                            show: false
-                        }
-                    }
-                ]
+                data: data
             }]
         };
 
@@ -671,13 +576,6 @@ $(function () {
 
 
         option = {
-            title: {
-                text: '功能使用情况',
-                subtext:'路径',
-                left:'center',
-                // borderColor:'grey',
-                // borderWidth: 1
-            },
             // 工具箱
             // toolbox: {
             //   show: true,
@@ -706,18 +604,7 @@ $(function () {
             series: [{
                 name: '数据量',
                 type: 'bar',
-                data: value,
-                // markPoint:{
-                //   data:[
-                //     {type:'max',name:'最大值'},
-                //     {type:'min',name:'最小值',symbol:'arrow'}
-                //   ]
-                // },
-                // markLine:{
-                //   data:[
-                //     {type: 'average',name:'平均值'}
-                //   ]
-                // }
+                data: value
             }
             ]
         }
