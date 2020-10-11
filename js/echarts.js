@@ -48,7 +48,6 @@ $(function () {
                 value: value
             })
         });
-        console.log(data_);
 
         option = {
             tooltip: {
@@ -441,6 +440,7 @@ $(function () {
         xhr.send()
     }
     function data_num(data) {
+        console.log(data);
         var numDiv = document.getElementsByClassName('num')[0]
         var num_list = []
         var html = '';
