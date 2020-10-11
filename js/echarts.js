@@ -6,12 +6,15 @@ $(function () {
     var day = d.getDate();
     var hour =d.getHours();
     var date = year + '' + (month < 10 ? ('0' + '' +month) : month) + '' + (day < 10 ? ('0' + '' +day) : day);
+    var num = 0;
 
     data_callback('province', map)
     data_callback('hour', echarts_3);
     data_callback('ua', echarts_4);
     data_callback('version', echarts_5);
     data_callback('path', echarts_6);
+    data_num(num)
+
 
     function map(data) {
         // 基于准备好的dom，初始化echarts实例
@@ -37,6 +40,7 @@ $(function () {
                     break
                 }
             }
+            num += value;
             // 地区经纬度
             // geoCoordMap[name] = v.properties.cp;
             data_.push({
@@ -61,7 +65,7 @@ $(function () {
                 text: ['高','低'],
                 inRange: {
                     // color: ['#7db9b9', '#22e5e8', '#376d94', '#4660c3'] // 蓝绿
-                    color: ['#84c7c7', '#E1F71F', '#FF5302'] // 蓝绿
+                    color: ['#44AFF0', '#E1F71F', '#FF5302'] // 蓝绿
                 },
                 show:true
             },
@@ -79,7 +83,7 @@ $(function () {
                 roam: true,
                 itemStyle: {
                     normal: {
-                        areaColor: '#031525',
+                        areaColor: '#44AFF0',
                         borderColor: '#3b3838'
                     },
                     emphasis: {
@@ -435,6 +439,20 @@ $(function () {
             }
         }
         xhr.send()
+    }
+    function data_num(data) {
+        var numDiv = document.getElementsByClassName('num')[0]
+        var num_list = []
+        var html = '';
+        while (data > 0) {
+            num_list.push(data%10)
+            data = Math.floor(data/10)
+        }
+        for (let i=num_list.length-1;i>-1;i++) {
+            if (i % 3 === 0) html += `<span>,</span>`
+            html += `<span>${num_list[i]}</span>`
+        }
+        numDiv.innerHTML = html;
     }
 })
 
