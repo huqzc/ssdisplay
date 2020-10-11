@@ -603,7 +603,12 @@ $(function () {
 
             // x轴
             xAxis: {
-                data: name
+                data: name,
+                axisLabel: {
+                    textStyle: {
+                        color: '#1BACBF'
+                    }
+                }
             },
             yAxis: {},
             // 数据
