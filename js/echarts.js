@@ -498,9 +498,11 @@ $(function () {
     }
     function echarts_5(data) {
         // 版本控制
+        var color = ['#f845f1', '#ad46f3', '#5045f6', '#4777f5', '#44aff0']
         var tag = []
         for (let item of data) {
             tag.push(item['name'])
+            item.itemStyle.normal.color = color[data.indexOf(item)]
         }
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('echarts_5'));
